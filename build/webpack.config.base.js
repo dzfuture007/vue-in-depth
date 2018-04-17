@@ -1,6 +1,9 @@
 // 放置所有webpack配置中都要用到的共同的配置
 
 const path = require('path')
+const createVueLoaderOptions = require('./vue-loader.config')
+
+const isDev = process.env.NODE_ENV === 'development'
 
 const config = {
   target: 'web',
@@ -13,7 +16,8 @@ const config = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: createVueLoaderOptions(isDev)
       },
       {
         test: /\.jsx$/,
