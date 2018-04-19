@@ -1,9 +1,10 @@
 import Vue from 'vue'
 
 const app = new Vue({
-  template: '<div>{{text}}</div>',
+  template: '<div>{{text}}{{obj.a}}</div>',
   data: {
-    text: 0
+    text: 0,
+    obj: {}
   }
   // watch: {
   //   text (newValue, oldValue) {
@@ -17,6 +18,10 @@ app.$mount('#root')
 
 // 可以通过vue的实例来改变data属性的值，同时会更新dom
 setInterval(function () {
+  app.text += 1
+  app.text += 1
+  app.text += 1
+  app.text += 1
   app.text += 1
 
   // 当通过$options.data来修改数据的时候，dom是不会有任何变化的。
@@ -94,3 +99,7 @@ app.$emit('test', 1, 2)
 // 3. app.$once：只会触发一次
 
 // 4. app.$forceUpdate()：强制组件去渲染一次。
+
+// 5. app.$set(app.obj, 'a', 1)：给vue实例的某个对象的某个属性赋值，如果使用这种方式，那么vue会给这个属性声名它是reactive的。
+
+// 6. app.$nextTick([callback])：在vue进行下一次的更新的时候，执行我们传入的callback。
