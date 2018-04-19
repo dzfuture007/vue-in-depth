@@ -13,40 +13,32 @@ const config = {
     path: path.join(__dirname, '../dist')
   },
   module: {
-    rules: [
-      {
-        test: /\.(js|jsx|vue)$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/,
-        enforce: 'pre'
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: createVueLoaderOptions(isDev)
-      },
-      {
-        test: /\.jsx$/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(gif|jpg|jpeg|png|svg)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 1024,
-              name: 'resources/[path][name]-[hash:8].[ext]'
-            }
-          }
-        ]
-      }
-    ]
+    rules: [{
+      test: /\.(js|jsx|vue)$/,
+      loader: 'eslint-loader',
+      exclude: /node_modules/,
+      enforce: 'pre'
+    }, {
+      test: /\.vue$/,
+      loader: 'vue-loader',
+      options: createVueLoaderOptions(isDev)
+    }, {
+      test: /\.jsx$/,
+      loader: 'babel-loader'
+    }, {
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/
+    }, {
+      test: /\.(gif|jpg|jpeg|png|svg)$/,
+      use: [{
+        loader: 'url-loader',
+        options: {
+          limit: 1024,
+          name: 'resources/[path][name]-[hash:8].[ext]'
+        }
+      }]
+    }]
   }
 }
 
