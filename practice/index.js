@@ -1,2 +1,3 @@
 // import './instance'
-import './lifycycle'
+// import './lifycycle'
+import './data-binding'
