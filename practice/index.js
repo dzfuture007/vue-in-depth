@@ -1,4 +1,5 @@
 // import './instance'
 // import './lifycycle'
 // import './data-binding'
-import './computed'
+// import './computed'
+import './directive'
