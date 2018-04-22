@@ -1,15 +1,19 @@
 import Vue from 'vue'
 
 const component = {
-  props: ['value'],
+  model: {
+    prop: 'value1',
+    event: 'change'
+  },
+  props: ['value1'],
   template: `
     <div>
-      <input type="text" @input="handleInput" :value="value">
+      <input type="text" @input="handleInput" :value="value1">
     </div>
   `,
   methods: {
     handleInput (e) {
-      this.$emit('input', e.target.value)
+      this.$emit('change', e.target.value)
     }
   }
 }
@@ -26,7 +30,13 @@ new Vue({
   },
   template: `
     <div>
-      <comp-one :value="value" @input="value = arguments[0]"></comp-one>
+      <comp-one v-model="value"></comp-one>
     </div>
   `
+  // 手动实现v-model
+  // template: `
+  //   <div>
+  //     <comp-one :value="value" @input="valueue = arguments[0]"></comp-one>
+  //   </div>
+  // `
 })
