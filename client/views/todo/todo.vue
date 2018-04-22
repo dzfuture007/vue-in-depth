@@ -66,10 +66,10 @@ export default {
     clearAllCompleted () {
       this.todos = this.todos.filter(todo => !todo.completed)
     }
-  },
-  mounted () {
-    console.log(this.id)
   }
+  // mounted () {
+  //   console.log(this.id)
+  // }
 }
 </script>
 
