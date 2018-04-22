@@ -1,7 +1,7 @@
 // 该文件主要放置router相关的设置
 
-import Todo from '../views/todo/todo.vue'
-import Login from '../views/login/login.vue'
+// import Todo from '../views/todo/todo.vue'
+// import Login from '../views/login/login.vue'
 
 export default [{
   path: '/',
@@ -11,7 +11,11 @@ export default [{
   // props: true,
   // props: (route) => ({ id: route.query.b })
   path: '/app',
-  component: Todo,
+  component: () => import('../views/todo/todo.vue'),
+  // components: {
+  //   default: Todo,
+  //   a: Login
+  // },
   name: 'app',
   meta: {
     title: 'this is app',
@@ -25,5 +29,9 @@ export default [{
   // ]
 }, {
   path: '/login',
-  component: Login
+  component: () => import('../views/login/login.vue')
+  // components: {
+  //   default: Login,
+  //   a: Todo
+  // }
 }]

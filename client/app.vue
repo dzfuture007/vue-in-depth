@@ -9,19 +9,20 @@
       <router-view/>
     </transition>
     <Footer></Footer>
+    <!-- <router-view name="a"/> -->
   </div>
 </template>
 
 <script>
 import Header from './layout/header.vue'
 import Footer from './layout/footer.jsx'
-import Todo from './views/todo/todo.vue'
+// import Todo from './views/todo/todo.vue'
 
 export default {
   components: {
     Header,
-    Footer,
-    Todo
+    Footer
+    // Todo
   }
   // mounted () {
   //   console.log(this.$route)
