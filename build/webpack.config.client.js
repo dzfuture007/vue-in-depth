@@ -15,7 +15,10 @@ const devServer = {
   overlay: {
     errors: true
   },
-  hot: true
+  hot: true,
+  historyApiFallback: {
+    index: '/index.html'
+  }
 }
 
 const defaultPlugins = [
@@ -24,7 +27,9 @@ const defaultPlugins = [
       NODE_ENV: isDev ? '"development"' : '"production"'
     }
   }),
-  new HTMLPlugin()
+  new HTMLPlugin({
+    template: path.join(__dirname, './template.html')
+  })
 ]
 
 let config
