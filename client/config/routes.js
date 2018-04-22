@@ -7,8 +7,22 @@ export default [{
   path: '/',
   redirect: '/app'
 }, {
+  // path: '/app/:id',
+  // props: true,
+  // props: (route) => ({ id: route.query.b })
   path: '/app',
-  component: Todo
+  component: Todo,
+  name: 'app',
+  meta: {
+    title: 'this is app',
+    description: 'test meta'
+  }
+  // children: [
+  //   {
+  //     path: 'test',
+  //     component: Login
+  //   }
+  // ]
 }, {
   path: '/login',
   component: Login

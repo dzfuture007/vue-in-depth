@@ -19,6 +19,7 @@
       @toggle="toggleFilter"
       @clearAllCompleted="clearAllCompleted"
     />
+    <!-- <router-view></router-view> -->
   </section>
 </template>
 
@@ -27,6 +28,7 @@ import Item from './item.vue'
 import Tabs from './tabs.vue'
 let id = 0
 export default {
+  props: ['id'],
   data () {
     return {
       todos: [],
@@ -64,6 +66,9 @@ export default {
     clearAllCompleted () {
       this.todos = this.todos.filter(todo => !todo.completed)
     }
+  },
+  mounted () {
+    console.log(this.id)
   }
 }
 </script>
