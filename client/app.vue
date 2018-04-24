@@ -2,6 +2,7 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
+    <p>{{fullName}}</p>
     <p>{{count}}</p>
     <!-- <todo></todo> -->
     <router-link to="/app">app</router-link>
@@ -15,6 +16,10 @@
 </template>
 
 <script>
+import {
+  mapState,
+  mapGetters
+} from 'vuex'
 import Header from './layout/header.vue'
 import Footer from './layout/footer.jsx'
 // import Todo from './views/todo/todo.vue'
@@ -33,9 +38,20 @@ export default {
     }, 1000)
   },
   computed: {
-    count () {
-      return this.$store.state.count
-    }
+    ...mapState(['count']),
+    // ...mapState({
+    //   counter: 'count'
+    // }),
+    // ...mapState({
+    //   counter: (state) => state.count
+    // }),
+    // count () {
+    //   return this.$store.state.count
+    // },
+    ...mapGetters(['fullName'])
+    // fullName () {
+    //   return this.$store.getters.fullName
+    // }
   }
   // mounted () {
   //   console.log(this.$route)
