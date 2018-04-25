@@ -53,13 +53,13 @@ export default {
     //   })
     // }, 1000)
     // mutation
-    let i = 1
-    setInterval(() => {
-      this.updateCount({
-        num: i++,
-        num2: 2
-      })
-    }, 1000)
+    // let i = 1
+    // setInterval(() => {
+    //   this.updateCount({
+    //     num: i++,
+    //     num2: 2
+    //   })
+    // }, 1000)
     // 这里可以直接调用模块的mutation，不用加上命名空间。
     // 因为默认vuex会把模块的mutaion放在全局的命名空间当中。
     // this.updateText(123)

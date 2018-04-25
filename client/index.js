@@ -20,6 +20,20 @@ store.registerModule('c', {
   }
 })
 
+// store.watch(state => state.count + 1, (newCount) => {
+//   console.log('new count watched: ', newCount)
+// })
+
+store.subscribe((mutation, state) => {
+  console.log(mutation.type) // mutation的名字
+  console.log(mutation.payload) // 获得这个mutation的参数
+})
+
+store.subscribeAction((action, state) => {
+  console.log(action.type) // action
+  console.log(action.payload) // 获得这个action的参数
+})
+
 new Vue({
   router,
   store,
