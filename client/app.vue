@@ -29,6 +29,9 @@ import Footer from './layout/footer.jsx'
 // import Todo from './views/todo/todo.vue'
 
 export default {
+  metaInfo: {
+    title: 'Frank\'s Todo App'
+  },
   components: {
     Header,
     Footer

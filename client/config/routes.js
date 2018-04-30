@@ -7,31 +7,9 @@ export default [{
   path: '/',
   redirect: '/app'
 }, {
-  // path: '/app/:id',
-  // props: true,
-  // props: (route) => ({ id: route.query.b })
   path: '/app',
-  component: () => import('../views/todo/todo.vue'),
-  // components: {
-  //   default: Todo,
-  //   a: Login
-  // },
-  name: 'app',
-  meta: {
-    title: 'this is app',
-    description: 'test meta'
-  }
-  // children: [
-  //   {
-  //     path: 'test',
-  //     component: Login
-  //   }
-  // ]
+  component: () => import('../views/todo/todo.vue')
 }, {
   path: '/login',
   component: () => import('../views/login/login.vue')
-  // components: {
-  //   default: Login,
-  //   a: Todo
-  // }
 }]
